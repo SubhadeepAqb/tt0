@@ -1,0 +1,15 @@
+{
+    "name": "subhadeep-asus/practice",
+    "authors": [
+        {
+            "name": "Subhadeep Sarkar",
+            "email": "subhadeep.s@aqbsolutions.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
