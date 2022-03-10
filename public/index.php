@@ -1,5 +1,5 @@
 <?php  
-//This is a new line
+
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use app\controllers\SiteController;
