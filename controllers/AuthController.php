@@ -21,11 +21,13 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+//        phpinfo();
+//        die();
         $registerModel = new RegisterModel();
 
         if($request->isPost()){
 
-
+//
 //            print '<pre>';
 //            var_dump($request->getBody());
 //            exit();
@@ -44,9 +46,9 @@ class AuthController extends Controller
 //            var_dump($registerModel->errors);
 //            exit;
 
-            return $this->render('register', [
-                'model' => $registerModel
-            ]);
+//            return $this->render('register', [
+//                'model' => $registerModel
+//            ]);
         }
 
         $this->setLayout('auth');
