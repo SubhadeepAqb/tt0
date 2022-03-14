@@ -12,6 +12,8 @@ class RegisterModel extends Model
     public string $password  = '';
     public string $confirmpassword = '';
 
+
+
     public function register()
     {
         print 'Creating new User';
