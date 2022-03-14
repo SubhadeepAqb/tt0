@@ -56,7 +56,7 @@ Class Router{
         }
         if(is_array($callback))
         {
-            Application::$app->controller = new $callback[0]();  // Instance of the controller
+            Application::$app->controller = new $callback[0]();  // Instance of the controller new Controller;
             $callback[0] = Application::$app->controller;
         }
         return call_user_func($callback, $this->request);
@@ -83,8 +83,6 @@ Class Router{
             include_once Application::$ROOT_DIR."/views/layouts/main.php";
         }
 
-
-
         return ob_get_clean();
     }
 
@@ -93,6 +91,7 @@ Class Router{
         foreach ($params as $key => $value)
         {
             $$key = $value ;
+//           $name = Subhadeep;
         }
 
         ob_start();
