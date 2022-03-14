@@ -2,13 +2,17 @@
 
 namespace app\core;
 
-abstract class Model
+
+class Model
 {
+
     public const RULE_REQUIRED = 'required';
     public const RULE_EMAIL    = 'email';
     public const RULE_MIN      = 'min';
     public const RULE_MAX      = 'max';
     public const RULE_MATCH    = 'match';
+
+
 
 
     public function loadData($data)
@@ -21,7 +25,7 @@ abstract class Model
 
     }
 
-    abstract public function rules(): array;
+//    abstract public function rules(): array;
 
     public array $errors = [];
 
