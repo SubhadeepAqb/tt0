@@ -19,6 +19,12 @@ class RegisterModel extends Model
         print 'Creating new User';
     }
 
+    public function inbound()
+    {
+        print 'Creating new Inbound shipment';
+
+    }
+
     public function rules(): array
     {
         return [
