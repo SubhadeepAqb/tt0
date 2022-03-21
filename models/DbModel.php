@@ -43,7 +43,7 @@ class DbModel
             $this->pdo = new PDO($this->dsn, DB_USER, DB_PASS, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
             if ($this->pdo) {
-//                echo "Connected to the ".DB_NAME." database successfully!";
+                echo "Connected to the ".DB_NAME." database successfully!";
             }
 
         }catch (PDOException $e) {
