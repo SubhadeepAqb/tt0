@@ -18,8 +18,6 @@ class Controller
 
         $this->dbmodel = new DbModel();
 
-
-
     }
     public string $layout = 'main';
 
