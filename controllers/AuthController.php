@@ -27,16 +27,7 @@ class AuthController extends Controller
 
         if($request->isPost()){
 
-//
-//            print '<pre>';
-//            var_dump($request->getBody());
-//            exit();
             $registerModel->loadData($request->getBody());
-
-
-//            print '<pre>';
-//            var_dump($registerModel);
-//            exit;
 
             if ($registerModel->validate() && $registerModel->register()){
                 return 'Success';
@@ -57,4 +48,6 @@ class AuthController extends Controller
             'model' => $registerModel
         ]);
     }
+
+
 }
