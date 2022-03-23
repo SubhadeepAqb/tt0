@@ -121,6 +121,7 @@ class DbModel
     public function queryExecute($sql) {
         $this->res = $this->pdo->prepare($sql);
         $this->res->execute();
+        return $this->pdo->lastInsertId();
     }
 
 }
