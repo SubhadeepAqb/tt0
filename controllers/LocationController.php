@@ -32,7 +32,9 @@ class LocationController extends Controller
         $body =$request->getBody();
         $location_obj = new location_bo();
         $location_obj->name = $body['lname'];
-        $location_obj->save();
+        $response= $location_obj->save();
+        //header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($response);
     }
 }
 
