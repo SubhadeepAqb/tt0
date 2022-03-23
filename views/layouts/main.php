@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
 </head>
 <body>
-    <script>
-        function call_api(method, url, data, successCallback, errorCallback)
-        {
-            $.ajax({
+<script>
+    
+    function call_api(method, url, data, successCallback, errorCallback)
+    {
+        $.ajax({
             type: method,
             url: url,
             data: data,
-            dataType: "json",
+            dataType: "json", 
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             crossDomain: true,
             beforeSend: function(jqxhr){},
             error: errorCallback,
-            success: result => {
-                $("#msgDiv").html(result);
-            }
-        })
-        }
+            success: successCallback
+        });
+    }
     </script>
-
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Navbar</a>
@@ -43,7 +43,10 @@
                 <a class="nav-link" href="contact">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="inbound">Inbound</a>
+                <a class="nav-link" href="location">Location</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tradingpartner">Trading Partner</a>
             </li>
 
         </ul>
@@ -60,14 +63,8 @@
 </nav>
 
 <div class="container">
-    <div id ="msgDiv"></div>
-        {{content}}
+{{content}}
 
 </div>
-
-
-
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>-->
 </body>
 </html>

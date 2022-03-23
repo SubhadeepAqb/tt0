@@ -67,7 +67,10 @@ Class Router{
         $layoutContent = $this->layoutContent();
         $viewContent   = $this->renderOnlyView($view , $params);
         return str_replace('{{content}}',$viewContent,$layoutContent);
+        //$layout = Application::$app->controller->layout;
+        //include_once Application::$ROOT_DIR."/views/layouts/$layout.php";
         //include_once Application::$ROOT_DIR."/views/$view.php";
+        //include_once Application::$ROOT_DIR."/views/layouts/footer.php";
     }
 
     protected function layoutContent()
@@ -83,7 +86,8 @@ Class Router{
             include_once Application::$ROOT_DIR."/views/layouts/main.php";
         }
 
-        return ob_get_clean();
+       return ob_get_clean();
+       
     }
 
     protected function renderOnlyView($view , $params)

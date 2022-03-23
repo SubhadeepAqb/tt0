@@ -1,7 +1,7 @@
 <?php
 
 namespace app\core;
-
+use app\models\DbModel;
 
 class Model
 {
@@ -11,9 +11,6 @@ class Model
     public const RULE_MIN      = 'min';
     public const RULE_MAX      = 'max';
     public const RULE_MATCH    = 'match';
-
-
-
 
     public function loadData($data)
     {

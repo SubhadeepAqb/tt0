@@ -1,27 +1,50 @@
+<h1>Create User</h1>
+ <form> 
+  <div class="form-group">
+        <label>FirstName</label>
+        <input type="text" name = "fname" class="form-control" >
+    </div>
 
-<h1>Create an Account</h1>
+    <div class="form-group">
+        <label>LastName</label>
+        <input type="text" name = "lname" class="form-control" >
+    </div>
 
-<?php $form = \app\core\form\Form::begin('',"post"); ?>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name = "email" class="form-control" >
+    </div>
 
-    <div class="row">
-        <div class="col">
-            <?php echo $form->field($model , 'firstname');   ?>
-        </div>
-
-        <div class="col">
-            <?php echo $form->field($model , 'lastname');   ?>
-        </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name = "password" class="form-control" >
     </div>
 
 
-    <?php echo $form->field($model , 'email');   ?>
-    <?php echo $form->field($model , 'password')->passwordField();   ?>
-    <?php echo $form->field($model , 'confirmpassword')->passwordField();   ?>
 
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="submit" name="submit" class="btn btn-primary">Register</button>
+</form>
+<?php //$form = \app\core\form\Form::begin('',"post"); ?>
+
+    <!-- <div class="row">
+        <div class="col">
+            <?php //echo $form->field($model , 'firstname');   ?>
+        </div>
+
+        <div class="col">
+            <?php //echo $form->field($model , 'lastname');   ?>
+        </div>
+    </div> -->
 
 
-<?php  \app\core\form\Form::end(); ?>
+    <?php //echo $form->field($model , 'email');   ?>
+    <?php //echo $form->field($model , 'password')->passwordField();   ?>
+    <?php //echo $form->field($model , 'confirmpassword')->passwordField();   ?>
+
+    <!-- <button type="submit" class="btn btn-primary">Register</button> -->
+
+
+<?php  //\app\core\form\Form::end(); ?>
 
 <!--<form action="" method="post">-->
 <!---->

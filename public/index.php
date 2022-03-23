@@ -5,7 +5,8 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use app\controllers\SiteController;
 use app\core\Application;
 use app\controllers\AuthController;
-use app\controllers\InboundController;
+use app\controllers\LocationController;
+use app\controllers\TradingPartnerController;
 //print_r($_SERVER['REQUEST_URI']);
 //exit;
 $app = new Application(dirname(__DIR__));
@@ -24,18 +25,20 @@ $app->router->post('/login', [AuthController::class, 'login']);
 
 $app->router->get('/register', [AuthController::class, 'register']);
 
-$app->router->post('/register', [AuthController::class, 'register']);
-
-
-
-$app->router->get('/inbound', [InboundController::class, 'inbound']);
-$app->router->get('/viewInbound', [InboundController::class, 'viewInbound']);
-
-$app->router->post('/inbound', [InboundController::class, 'save_inbound']);
+//$app->router->post('/register', [AuthController::class, 'register']);
 
 
 $app->router->get('/app', 'home');
 
+$app->router->get('/location', [LocationController::class, 'formview']);
+
+$app->router->post('/location', [LocationController::class, 'insert']);
+
+//$app->router->get('/location', [LocationController::class, 'displayrecords']);
+
+$app->router->get('/tradingpartner', [TradingPartnerController::class, 'formview']);
+
+$app->router->post('/tradingpartner', [TradingPartnerController::class, 'insertrecords']);
 
 
 $app->run();
