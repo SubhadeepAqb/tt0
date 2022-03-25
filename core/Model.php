@@ -12,6 +12,14 @@ class Model
     public const RULE_MAX      = 'max';
     public const RULE_MATCH    = 'match';
 
+    public $dbmodel  = null;
+
+    public function __construct()
+    {
+        $this->dbmodel = new DbModel();
+    }
+
+
     public function loadData($data)
     {
      foreach ($data as $key => $value){
