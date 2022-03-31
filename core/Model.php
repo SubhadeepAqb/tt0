@@ -12,11 +12,11 @@ class Model
     public const RULE_MAX      = 'max';
     public const RULE_MATCH    = 'match';
 
-    public $dbmodel  = null;
+    public $db  = null;
 
     public function __construct()
     {
-        $this->dbmodel = new DbModel();
+        $this->db = new DbModel();
     }
 
 
