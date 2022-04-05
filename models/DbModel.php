@@ -42,11 +42,10 @@ class DbModel
 
             $this->pdo = new PDO($this->dsn, DB_USER, DB_PASS, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
-            if ($this->pdo) {
-              // echo "Connected to the ".DB_NAME." database successfully!";
+            if (!$this->pdo) {
+              echo "Not Connected to the ".DB_NAME." database successfully!";
             }
-            else
-                die("Not connected");
+
 
         }catch (PDOException $e) {
             echo $e->getMessage();
@@ -57,15 +56,28 @@ class DbModel
     }
 
 
-    /////  Fetching all rows /////////
-    public function numRows($sql) {
-        $this->res = $this->pdo->prepare($sql);
+
+
+
+
+
+
+
+
+    /*
+     * @desc Fetching number of rows
+     *
+     * @param string        $sql
+     *
+     * return int
+     */
+    public function numRows( String $sql ): int
+    {
+        $this->res = $this->pdo->prepare( $sql );
         $this->res->execute();
         $this->num_rows = $this->res->rowCount();
 
-
         return $this->num_rows;
-
     }
 
 
@@ -76,16 +88,19 @@ class DbModel
 
 
 
-    /////  Fetching all rows /////////
-    public function querySelect($sql) {
-        $this->res = $this->pdo->prepare($sql);
-        $this->res->execute();
 
-        while ($this->row = $this->res->fetch()) {
-            $this->rows[] = $this->row;
-        }
-        //$this->rows[].=$this->num_rows;
-        return $this->rows;
+    /*
+     * @desc Fetching all rows
+     *
+     * @param string        $sql
+     *
+     * return array
+     */
+    public function querySelect( String $sql ) {
+
+        $this->res = $this->pdo->query( $sql );
+
+        return $this->res->fetchAll( PDO::FETCH_ASSOC );
 
     }
 
@@ -102,10 +117,10 @@ class DbModel
 
     /////  Fetching a single row /////////
     public function querySelectSingle($sql) {
-        $this->res = $this->pdo->prepare($sql);
-        $this->res->execute();
 
-        return $this->res->fetch();
+        $this->res = $this->pdo->query($sql);
+
+        return $this->res->fetch(PDO::FETCH_ASSOC);
 
     }
 
@@ -118,9 +133,18 @@ class DbModel
 
 
     /////  INSERT , UPDATE , DELETE query executing method ////
-    public function queryExecute($sql) {
+    public function queryExecute($sql): bool
+    {
         $this->res = $this->pdo->prepare($sql);
-        $this->res->execute();
+        return $this->res->execute();
+
+    }
+
+
+
+
+	//// Last Insert Id ///
+    public function lastInsertId(){
         return $this->pdo->lastInsertId();
     }
 

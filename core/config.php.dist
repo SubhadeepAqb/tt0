@@ -1,0 +1,11 @@
+<?php
+
+date_default_timezone_set('Asia/Kolkata');
+
+define("DB_HOST", "CHANGEME");
+define("DB_USER", "CHANGEME");
+define("DB_PASS", "CHANGEME");
+define("DB_NAME", "CHANGEME");
+
+
+?>

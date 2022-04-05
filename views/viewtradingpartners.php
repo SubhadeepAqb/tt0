@@ -116,6 +116,7 @@
 
 <!--form View-->
 
+
 <table class="ui celled table">
     <thead>
     <th>ID</th>
@@ -127,7 +128,7 @@
     <th>Action</th>
 
     </thead>
-    <tbody id="tpbody">
+    <tbody id="tpbody" >
 
     </tbody>
 </table>
@@ -136,11 +137,14 @@
 <script>
     $(document).ready(function (){
        loadTradingpartner();
+
     })
     function loadTradingpartner(){
         call_api("GET", "/viewtradingpartners", {}, function(Response){ console.log(Response);
             var html = '';
+
             for(var i in Response){
+           
                      html += '<tr>' +
                     '<td>'+ Response[i].id+'</td>' +
                     '<td>'+ Response[i].trading_partner_name+'</td>' +
@@ -148,6 +152,7 @@
                     '<td>'+ Response[i].mobile+'</td>' +
                     '<td>'+ Response[i].email+'</td>' +
                     '<td>'+ Response[i].is_delete+'</td>' +
+
               '<td><a href="#editModal" data-toggle="modal" data-target="#editModal" id="edit"  data-id="'+ Response[i].id +'"> <i class="icon pencil alternate"></i> Edit</a>&nbsp;|&nbsp;<a href="#delModal" data-toggle="modal" data-target="#delModal" id="delete" data-id="'+ Response[i].id +'"><i class="trash alternate icon"></i> Delete</a></td>' +
 
                     '</tr>'

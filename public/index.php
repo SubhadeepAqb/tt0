@@ -12,9 +12,12 @@ use app\controllers\LoginController;
 use app\controllers\InboundController;
 use app\controllers\ProductController;
 use app\controllers\CompositionController;
-//print_r($_SERVER['REQUEST_URI']);
-//exit;
+
 $app = new Application(dirname(__DIR__));
+
+$app->router->get('/login', [LoginController::class, 'formview']);
+$app->router->post('/login', [LoginController::class, 'fetch']);
+
 
 $app->router->get('/', [SiteController::class , 'home']);
 
@@ -24,8 +27,6 @@ $app->router->get('/contact', [SiteController::class , 'Contact']);
 
 $app->router->post('/contact', [SiteController::class , 'handleContact']);
 
-$app->router->get('/login', [AuthController::class, 'login']);
-$app->router->post('/login', [AuthController::class, 'login']);
 
 $app->router->get('/register', [AuthController::class, 'register']);
 
@@ -35,17 +36,14 @@ $app->router->get('/register', [AuthController::class, 'register']);
 $app->router->get('/app', 'home');
 
 $app->router->get('/location', [LocationController::class, 'formview']);
-$app->router->post('/location', [LocationController::class, 'insert']);
 
+$app->router->post('/location', [LocationController::class, 'insert']);
 
 //$app->router->get('/location', [LocationController::class, 'displayrecords']);
 
-$app->router->get('/tradingpartner', [TradingPartnerController::class, 'formview']);
-$app->router->post('/tradingpartner', [TradingPartnerController::class, 'insertrecords']);
 
 
-$app->router->get('/login', [LoginController::class, 'formview']);
-$app->router->post('/login', [LoginController::class, 'fetch']);
+
 
 
 $app->router->get('/inbound', [InboundController::class, 'allInbounds']);
@@ -70,6 +68,29 @@ $app->router->post('/composition', [CompositionController::class, 'insertComposi
 
 $app->router->get('/adjustment', [AdjustmentController::class, 'renderAdjustment']);
 $app->router->get('/viewadjustedProducts', [AdjustmentController::class, 'viewadjustedProducts']);
+
+//////////////////////      TRADING PARTNER ROUTER        ////////////////////////////
+
+
+$app->router->get('/tradingpartner', [TradingPartnerController::class, 'formview']);
+$app->router->get('/addTradingpartner', [TradingPartnerController::class, 'addTradingpartner']);
+$app->router->get('/viewtradingpartners', [TradingPartnerController::class, 'viewTradingpartners']);
+
+$app->router->get('/editTradingpartners', [TradingPartnerController::class, 'editTradingpartners']);
+
+$app->router->post('/updateTradingpartner', [TradingPartnerController::class, 'updateTradingpartners']);
+
+$app->router->get('/viewdeleteTradingpartners', [TradingPartnerController::class, 'viewdeleteTradingpartners']);
+$app->router->post('/deleteTradingpartner', [TradingPartnerController::class, 'deleteTradingpartners']);
+
+//$app->router->get('/deletetradingpartners', [TradingPartnerController::class, 'deleteTradingpartners']);
+
+$app->router->post('/tradingpartner', [TradingPartnerController::class, 'insertTradingpartner']);
+
+
+
+//////////////////////////////////  END TRADING PARTNER ROUTER    /////////////////////////
+
 
 
 $app->run();
