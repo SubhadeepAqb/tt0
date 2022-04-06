@@ -2,34 +2,20 @@
 
 namespace app\models;
 
-use app\core\Model;
+use app\core\business_object\Register\register_bo;
+use app\models\DbModel;
 
-class RegisterModel extends Model
+class registerModel extends DbModel
 {
-    public string $firstname = '';
-    public string $lastname  = '';
-    public string $email     = '';
-    public string $password  = '';
-    public string $confirmpassword = '';
-
-
-
-    public function register()
+    public $dbmodel  = null;
+    public function __construct()
     {
-        print 'Creating new User';
+        $this->dbmodel = new DbModel();
     }
 
-    public function rules(): array
-    {
-        return [
-            'firstname' => [self::RULE_REQUIRED],
-            'lastname'  => [self::RULE_REQUIRED],
-            'email'     => [self::RULE_REQUIRED , self::RULE_EMAIL],
-            'password'  => [self::RULE_REQUIRED , [self::RULE_MIN , 'min' => 6] , [self::RULE_MAX , 'max' => 24]],
-            'confirmpassword'  => [self::RULE_REQUIRED , [self::RULE_MATCH , 'match' => 'password' ]],
-
-        ];
+    public function getAll(){
+        $sql = "SELECT * FROM users";
+        return $this->dbmodel->querySelect($sql);
     }
-
 
 }
