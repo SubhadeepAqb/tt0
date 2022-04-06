@@ -33,7 +33,7 @@ class DbModel
 
 
 
-    // Constructor for establishing database connection //
+    // Constructor for establishing database connection 
 
     public function __construct() {
 
@@ -43,16 +43,14 @@ class DbModel
             $this->pdo = new PDO($this->dsn, DB_USER, DB_PASS, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
             if (!$this->pdo) {
+
               echo "Not Connected to the ".DB_NAME." database successfully!";
             }
+        }
+        catch (PDOException $e) {
 
-
-        }catch (PDOException $e) {
             echo $e->getMessage();
         }
-
-
-
     }
 
 
@@ -71,7 +69,7 @@ class DbModel
      *
      * return int
      */
-    public function numRows( String $sql ): int
+    public function numRows( String $sql ) : int
     {
         $this->res = $this->pdo->prepare( $sql );
         $this->res->execute();
@@ -96,7 +94,8 @@ class DbModel
      *
      * return array
      */
-    public function querySelect( String $sql ) {
+    public function querySelect( String $sql ) : array
+    {
 
         $this->res = $this->pdo->query( $sql );
 
@@ -114,13 +113,19 @@ class DbModel
 
 
 
+    /*
+     * @desc Fetching single row
+     *
+     * @param string        $sql
+     *
+     * return array
+     */
+    public function querySelectSingle( $sql ) : array
+    {
 
-    /////  Fetching a single row /////////
-    public function querySelectSingle($sql) {
+        $this->res = $this->pdo->query( $sql );
 
-        $this->res = $this->pdo->query($sql);
-
-        return $this->res->fetch(PDO::FETCH_ASSOC);
+        return $this->res->fetch( PDO::FETCH_ASSOC );
 
     }
 
@@ -132,20 +137,42 @@ class DbModel
 
 
 
-    /////  INSERT , UPDATE , DELETE query executing method ////
-    public function queryExecute($sql): bool
+
+    /*
+     * @desc INSERT , UPDATE , DELETE query executing method ////
+     *
+     * @param string        $sql
+     *
+     * return boolean
+     */
+    public function queryExecute($sql) : bool
     {
         $this->res = $this->pdo->prepare($sql);
+
         return $this->res->execute();
 
-    }
+    } 
 
 
 
 
-	//// Last Insert Id ///
-    public function lastInsertId(){
+
+
+
+
+
+
+    /*
+     * @desc fatching last inserted id ////
+     *
+     * @param 
+     *
+     * return int
+     */
+    public function lastInsertId() : int{
+
         return $this->pdo->lastInsertId();
+
     }
 
 }
