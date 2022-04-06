@@ -25,6 +25,7 @@ use app\controllers\TransactionLineItemController;
 
 
 
+
 $app = new Application(dirname(__DIR__));
 
 
@@ -125,6 +126,35 @@ if(!isset($_COOKIE['loginTrue']) || $_COOKIE['loginTrue']=="undefined" || $_COOK
     $app->router->post('/updateShelf', [LoginController::class, 'formview']);
 
     $app->router->post('/deleterecordsshelf', [LoginController::class, 'formview']);
+
+        //////////////////// Transaction ////////////////////
+    $app->router->get('/transactions', [LoginController::class, 'formview']);
+
+    $app->router->get('/displayTransactions', [LoginController::class, 'formview']);
+
+    $app->router->post('/inserttransactions', [LoginController::class, 'formview']);
+
+    $app->router->get('/tradingpartnerdisplay', [LoginController::class, 'formview']);
+
+    $app->router->get('/deliverydisplay', [LoginController::class, 'formview']);
+
+    $app->router->get('/editTransactions', [LoginController::class, 'formview']);
+
+    $app->router->post('/updateTransactions', [LoginController::class, 'formview']);
+
+    $app->router->post('/deleteTransactions', [LoginController::class, 'formview']);
+
+
+
+
+    //////////////////// transaction line item ////////////////////
+    $app->router->get('/transactionsli', [LoginController::class, 'formview']);
+
+    $app->router->get('/displayTransactionLineItem', [LoginController::class, 'formview']);
+
+    $app->router->post('/insertTransactionLineItem', [LoginController::class, 'formview']);
+
+    $app->router->post('/inserttransactionsinline', [LoginController::class, 'formview']);
 
 }
 
@@ -243,6 +273,38 @@ else{
 
     //end points of composition
     $app->router->post('/composition', [CompositionController::class, 'insertCompositions']);
+
+
+        //////////////////// Transaction ////////////////////
+    $app->router->get('/transactions', [TransactionController::class, 'formview']);
+
+    $app->router->get('/displayTransactions', [TransactionController::class, 'displayTransaction']);
+
+    $app->router->post('/inserttransactions', [TransactionController::class, 'inserttransaction']);
+
+    $app->router->get('/tradingpartnerdisplay', [TransactionController::class, 'tradingpartnerDisplay']);
+
+    $app->router->get('/deliverydisplay', [TransactionController::class, 'deliveryDisplay']);
+
+    $app->router->get('/editTransactions', [TransactionController::class, 'editTransaction']);
+
+    $app->router->post('/updateTransactions', [TransactionController::class, 'updateTransaction']);
+
+    $app->router->post('/deleteTransactions', [TransactionController::class, 'deleteTransaction']);
+
+
+
+
+    //////////////////// transaction line item ////////////////////
+    $app->router->get('/transactionsli', [TransactionLineItemController::class, 'tliview']);
+
+    $app->router->get('/displayTransactionLineItem', [TransactionLineItemController::class, 'displaytransactionlineitem']);
+
+    $app->router->post('/insertTransactionLineItem', [TransactionLineItemController::class, 'inserttransactionlineitem']);
+
+    // $app->router->get('/viewProducts', [TransactionLineItemController::class, 'viewProductsName']);
+
+    $app->router->post('/inserttransactionsinline', [TransactionLineItemController::class, 'inserttransactionlineitem']);
     
     $app->router->get('/logout', [LoginController::class, 'logout']);
 }

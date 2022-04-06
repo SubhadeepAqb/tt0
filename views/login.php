@@ -30,7 +30,6 @@
 
 
 
-
          
             $('#login_btn').click(function(){
                 var email = $('#email').val();
@@ -51,7 +50,8 @@
                         document.cookie = `loginTrue=${Response.timestamp}; expires=`+now.toUTCString();   
                         document.cookie = `type=${Response.type}; expires=`+now.toUTCString(); 
 
-                        if(Response.timestamp>=Response.timestamp && Response.timestamp!='undefined' && Response.timestamp!=null){
+                        if(Response.timestamp>=Response.timestamp && Response.timestamp!='undefined' && Response.timestamp!=null)
+                        {
                         window.location.href = "/home";
                         }
                         else {

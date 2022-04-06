@@ -81,6 +81,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="storageshelf">Storage Shelves</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="transactions">Transaction</a>
+            </li>
+
+
 
 
 <?php
