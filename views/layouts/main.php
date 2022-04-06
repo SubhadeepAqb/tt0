@@ -69,6 +69,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="inbound">Inbound</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="location">Location</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="address">Address</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="storagearea">Storage Area</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="storageshelf">Storage Shelves</a>
+            </li>
+
+
 <?php
             if(isset($_COOKIE['type']) && $_COOKIE['type']!='undefined' && $_COOKIE['type']!=null 
             && $_COOKIE['type']=='admin' )
