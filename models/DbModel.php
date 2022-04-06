@@ -120,7 +120,7 @@ class DbModel
      *
      * return array
      */
-    public function querySelectSingle( $sql ) : array
+    public function querySelectSingle( $sql )
     {
 
         $this->res = $this->pdo->query( $sql );
