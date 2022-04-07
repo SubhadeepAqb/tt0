@@ -244,8 +244,8 @@ Add New Transactions
             var TradingPartnerID = $("#TradingPartnerID").val();
             var DeliveryStatus = $("#DeliveryStatus").val();
             var Deliveryaddress = $("#Deliveryaddress").val();
-            var LineItems[] = ['productId'=>1,
-                             'quantity'=>10];
+            // var LineItems[] = ['productId'=>1,
+            //                  'quantity'=>10];
 
         call_api("POST", "/inserttransactions", 
             {
@@ -253,7 +253,7 @@ Add New Transactions
                 'TradingPartnerID':TradingPartnerID,
                 'DeliveryStatus':DeliveryStatus,
                 'Deliveryaddress':Deliveryaddress,
-                'lineItems':Json_encode(LineItems[])
+                // 'lineItems':Json_encode(LineItems[])
             },
                 function(Response){
                     $('#TransactionID').val(Response.id);
