@@ -135,16 +135,17 @@
 
 
 <script>
-    $(document).ready(function (){
+    $(document).ready(function(){
        loadTradingpartner();
 
     })
     function loadTradingpartner(){
         call_api("GET", "/viewtradingpartners", {}, function(Response){ console.log(Response);
             var html = '';
-
+            debugger;
             for(var i in Response){
-           
+                console.log(Response);
+                debugger;
                      html += '<tr>' +
                     '<td>'+ Response[i].id+'</td>' +
                     '<td>'+ Response[i].trading_partner_name+'</td>' +
@@ -152,9 +153,7 @@
                     '<td>'+ Response[i].mobile+'</td>' +
                     '<td>'+ Response[i].email+'</td>' +
                     '<td>'+ Response[i].is_delete+'</td>' +
-
-              '<td><a href="#editModal" data-toggle="modal" data-target="#editModal" id="edit"  data-id="'+ Response[i].id +'"> <i class="icon pencil alternate"></i> Edit</a>&nbsp;|&nbsp;<a href="#delModal" data-toggle="modal" data-target="#delModal" id="delete" data-id="'+ Response[i].id +'"><i class="trash alternate icon"></i> Delete</a></td>' +
-
+                    '<td><a href="#editModal" data-toggle="modal" data-target="#editModal" id="edit"  data-id="'+ Response[i].id +'"> <i class="icon pencil alternate"></i> Edit</a>&nbsp;|&nbsp;<a href="#delModal" data-toggle="modal" data-target="#delModal" id="delete" data-id="'+ Response[i].id +'"><i class="trash alternate icon"></i> Delete</a></td>' +
                     '</tr>'
             }
             $('#tpbody').html(html)

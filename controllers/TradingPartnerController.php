@@ -22,12 +22,12 @@ class TradingPartnerController extends Controller
         return $this->render('viewtradingpartners');
     }
 
-    public function addTradingpartner(Request $request)
-    {
-        $body = $request->getBody();
+    // public function addTradingpartner(Request $request)
+    // {
+    //     $body = $request->getBody();
 
-        return $this->render('tradingpartner');
-    }
+    //     return $this->render('tradingpartner');
+    // }
 
 //    INSERT VALUES //
     

@@ -2,7 +2,7 @@
 namespace app\core\business_object\TradingPartner;
 
 use app\core\Request;
-use app\models\DbModel;
+//use app\models\DbModel;
 use app\core\business_object\bo_common as bo;
 
 
@@ -12,12 +12,14 @@ class trading_partner_bo extends bo
     //public $db;
     public $id;
 
+    public $lastInsertId;
     public $tp_name   = '';
     public $bu_name   = '';
     public $mobile    = '';
     public $email     = '';
     public $is_delete = '';
     public $ts        = '';
+
 
 //    public function __construct()
 //    {

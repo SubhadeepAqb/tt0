@@ -3,7 +3,7 @@
 namespace app\models;
 
 use app\core\business_object\TradingPartner\trading_partner_bo;
-use app\models\DbModel;
+//use app\models\DbModel;
 use app\core\Model;
 
 class TradingPartnerModel extends Model
