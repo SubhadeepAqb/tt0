@@ -244,7 +244,7 @@ Add New Transactions
             var TradingPartnerID = $("#TradingPartnerID").val();
             var DeliveryStatus = $("#DeliveryStatus").val();
             var Deliveryaddress = $("#Deliveryaddress").val();
-            var LineItems[] = ['productId'=>$("#ProductId").val();,
+            var LineItems[] = ['productId'=>1,
                              'quantity'=>10];
 
         call_api("POST", "/inserttransactions", 
