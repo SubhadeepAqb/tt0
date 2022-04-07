@@ -38,7 +38,7 @@ class DbModel
     public function __construct() {
 
         try {
-            $this->dsn = "pgsql:host=".DB_HOST.";port=5432;dbname=".DB_NAME.";";
+            $this->dsn = "pgsql:host=".DB_HOST.";port=6431;dbname=".DB_NAME.";";
 
             $this->pdo = new PDO($this->dsn, DB_USER, DB_PASS, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
