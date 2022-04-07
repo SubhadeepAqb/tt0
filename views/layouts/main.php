@@ -67,6 +67,9 @@
                 <a class="nav-link" href="product">Product</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="adjustment">Inventory Adjustment</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="inbound">Inbound</a>
             </li>
             <li class="nav-item">
@@ -84,6 +87,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="transactions">Transaction</a>
             </li>
+
 
 
 

@@ -62,6 +62,12 @@ if(!isset($_COOKIE['loginTrue']) || $_COOKIE['loginTrue']=="undefined" || $_COOK
     $app->router->post('/composition', [LoginController::class, 'formview']);
 
 
+    //end points of adjustment
+    $app->router->get('/adjustment', [LoginController::class, 'formview']);
+    $app->router->get('/viewadjustedProducts', [LoginController::class, 'formview']);
+    $app->router->get('/loadParticularData', [LoginController::class, 'formview']);
+
+
     //end points of Inbound//end points of Register
 
 
@@ -222,6 +228,12 @@ else{
     $app->router->get('/loadProduct', [ProductController::class, 'loadParticularProduct']);
     $app->router->post('/updateProduct', [ProductController::class, 'updateProduct']);
     $app->router->post('/deleteProduct', [ProductController::class, 'deleteProduct']);
+
+
+    //end points of adjustment
+    $app->router->get('/adjustment', [AdjustmentController::class, 'renderAdjustment']);
+    $app->router->get('/viewadjustedProducts', [AdjustmentController::class, 'viewadjustedProducts']);
+    $app->router->get('/loadParticularData', [AdjustmentController::class, 'loadParticularData']);
 
 
     //end points of composition
