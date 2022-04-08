@@ -70,6 +70,9 @@
                 <a class="nav-link" href="inbound">Inbound</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="adjustment">Inventory Adjustment</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="location">Location</a>
             </li>
             <li class="nav-item">
