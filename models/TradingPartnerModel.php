@@ -18,7 +18,7 @@ class TradingPartnerModel extends Model
 
 
 
-    public function getALL()
+    public function getAll()
     {
         $sql= "SELECT * FROM trading_partners ORDER BY id DESC";
         return $this->db->querySelect($sql);

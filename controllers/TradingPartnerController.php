@@ -19,7 +19,7 @@ class TradingPartnerController extends Controller
     {
         $body = $request->getBody();
        
-        return $this->render('viewtradingpartners');
+        return $this->render('viewTradingpartners');
     }
 
     // public function addTradingpartner(Request $request)
